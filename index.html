@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>OC-BEAT | Rhythm game</title>     
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body>     
+    <canvas id="bgCanvas"></canvas>     
+    
+    <div id="title-screen">         
+        <h1 class="glitch" data-text="OC-BEAT">OC-BEAT</h1>                  
+        <div class="menu">             
+            <button id="btn-play" class="menu-btn">[ PLAY ]</button>             
+            <button id="btn-settings" class="menu-btn">[ SETTINGS ]</button>             
+            <button id="btn-help" class="menu-btn">[ HELP ]</button>         
+        </div>         
+        <div class="watermark">-by kai</div>     
+    </div>     
+
+    <div id="track-screen" class="hidden overlay-screen">         
+        <h2>> MOUNT AUDIO_DRIVE</h2>         
+        <div class="help-content" style="text-align: center;">             
+            <p>> SELECT DATA STREAM TO PROCESS:</p>             
+            <div class="menu" style="margin-top: 20px;">                 
+                <button class="menu-btn track-btn" data-track="songs/breakdown.ogg">[ ./breakdown.ogg ]</button>                 
+                <button class="menu-btn track-btn" data-track="songs/decimeter.ogg">[ ./decimeter.ogg ]</button>             
+            </div>         
+        </div>         
+        <button id="btn-close-track" class="menu-btn">[ CANCEL ]</button>     
+    </div>     
+
+    <div id="settings-screen" class="hidden overlay-screen">         
+        <h2>> SYSTEM CONFIG</h2>         
+        <div class="help-content">             
+            <p>> <strong>AUDIO CONTROLS:</strong></p>             
+            <label class="setting-item"><input type="checkbox" checked> Master Volume</label><br>             
+            <label class="setting-item"><input type="checkbox" checked> UI Sound Effects</label>             
+            <br><br>             
+            <p>> <strong>BASE CLOCK (Difficulty):</strong></p>             
+            <select class="terminal-select">                 
+                <option>Stock Air Cooler (Easy)</option>                 
+                <option selected>AIO Liquid Cooler (Normal)</option>                 
+                <option>Liquid Nitrogen (Hard)</option>             
+            </select>         
+        </div>         
+        <button id="btn-close-settings" class="menu-btn">[ RETURN ]</button>     
+    </div>        
+
+    <div id="help-screen" class="hidden overlay-screen">         
+        <h2>> SYSTEM MANUAL</h2>         
+        <div class="help-content">             
+            <p>> <strong>GOAL:</strong> Process data packets to keep the system overclocked.</p>             
+            <p>> <strong>CONTROLS:</strong> Use the <strong>[ D ] [ F ] [ J ] [ K ]</strong> keys to hit the packets on the CPU socket line.</p>             
+            <p>> <strong>MECHANICS:</strong></p>             
+            <ul>                 
+                <li>Perfect hits increase your Clock Speed (Score Multiplier).</li>                 
+                <li>Missed packets cause voltage spikes, raising the Core Temp.</li>                 
+                <li>If the Temp hits 100 C, the system forces an emergency shutdown (Game Over).</li>             
+            </ul>         
+        </div>         
+        <button id="btn-close-help" class="menu-btn">[ RETURN ]</button>     
+    </div>     
+
+    <div id="game-screen" class="hidden">         
+        <canvas id="gameCanvas" width="400" height="600"></canvas>     
+    </div>     
+
+    <script src="script.js"></script> 
+</body> 
+</html>
